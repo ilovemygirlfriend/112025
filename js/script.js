@@ -97,7 +97,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(wrap);
   }
 });
+// === Music Flap Toggle ===
+const flapButton = document.querySelector('.flap-toggle');
+const musicArea = document.getElementById('music-area');
 
+if (flapButton && musicArea) {
+  flapButton.addEventListener('click', () => {
+    const isHidden = musicArea.hasAttribute('hidden');
+    if (isHidden) {
+      musicArea.removeAttribute('hidden');
+      musicArea.classList.add('show');
+      flapButton.setAttribute('aria-expanded', 'true');
+    } else {
+      musicArea.setAttribute('hidden', '');
+      flapButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 const music = document.getElementById('music');
 const record = document.querySelector('.record');
