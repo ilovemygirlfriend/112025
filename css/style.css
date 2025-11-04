@@ -1,9 +1,10 @@
 @font-face {
   font-family: 'ROMANTIC';
-  src: url('ROMANTIC.ttf') format('truetype');
+  src: url('ROMANTIC.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
+
 
 @font-face {
   font-family: 'Lora';
@@ -343,10 +344,3 @@ body {
   }
 }
 
-* {
-  font-family: 'ROMANTIC', serif !important;
-}
-
-html, body, h1, h2, h3, h4, h5, h6, p, a, span, div {
-  font-family: 'ROMANTIC', serif !important;
-}
