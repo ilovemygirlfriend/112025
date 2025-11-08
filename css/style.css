@@ -201,13 +201,23 @@ body {
 }
 
 .record {
+  position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, #444 40%, #222 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  animation: spin 6s linear infinite;
-  animation-play-state: running;
+
+  background: repeating-radial-gradient(
+    circle,
+    #0a0a0a 0,
+    #0a0a0a 1px,
+    #000 2px
+  );
+
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05),
+              inset 0 0 40px rgba(0, 0, 0, 0.5);
+
+  animation: spin 5s linear infinite;
+  overflow: hidden;
 }
 
 .record::before {
@@ -217,9 +227,22 @@ body {
   left: 50%;
   width: 36px;
   height: 36px;
-  background: #ff9eb5;
+  background: #b03842;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.record::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 70%);
+  pointer-events: none;
 }
 
 @keyframes spin {
