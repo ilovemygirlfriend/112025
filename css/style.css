@@ -1,28 +1,25 @@
+/* LINKS */
 a {
-  color: inherit;            /* make links use the surrounding text color */
-  text-decoration: none;     /* removes the underline */
+  color: inherit;
+  text-decoration: none;
 }
-
 a:hover {
-  text-decoration: underline; /* optional: adds underline only when hovered */
-  opacity: 0.8;              /* optional: subtle fade on hover */
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
+/* FONTS */
 @font-face {
   font-family: 'ROMANTIC';
   src: url('ROMANTIC.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
 }
-
 @font-face {
   font-family: 'Lora';
   src: url('./fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
   font-style: italic;
 }
 
-
+/* ROOT COLORS */
 :root {
   --paper: #ebd7bf;
   --accent: #7b5a36;
@@ -32,123 +29,32 @@ a:hover {
   --shadow: rgba(45, 33, 25, 0.12);
 }
 
-.polaroid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #fffaf5;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* keeps the image centered and tidy */
-}
-
-.main-photo {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-}
-
-.caption {
-  margin-top: 0.5rem;
-  font-style: italic;
-  color: #704b2a;
-  font-size: 0.95rem;
-}
-
-.preview {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.preview.show {
-  display: block;
-  opacity: 1;
-}
-
-.preview-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-  align-items: center;
-  margin-top: 1rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  background: #fffaf5;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 240px;
-}
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-text {
-  padding: 0.8rem;
-  font-size: 1rem;
-  color: #4a3a2a;
-  font-weight: 500;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-
+/* GLOBAL */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Lora', serif;
   color: var(--text);
   background-color: var(--paper);
   line-height: 1.8;
   letter-spacing: 1px;
+  overflow-x: hidden;
 }
-
 
 .title, .section-title, .nav .brand, .letter-title, .bubble h3 {
   font-family: 'ROMANTIC', cursive;
   letter-spacing: 4px;
 }
 
-
+/* CONTAINERS */
 .container {
   max-width: 980px;
   margin: 36px auto;
   padding: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
-.narrow {
-  max-width: 720px;
-  margin: 0 auto;
-}
+.narrow { max-width: 720px; margin: 0 auto; }
 
 .nav {
   display: flex;
@@ -159,105 +65,94 @@ body {
 .nav .brand {
   color: var(--accent);
   font-size: 28px;
-  text-decoration: none;
 }
 
-/* === Links Section === */
-.links-list ul {
-  list-style: none;
-  padding: 0;
-}
-.links-list li {
-  margin: 10px 0;
-}
-.links-list a {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 18px;
-}
-.links-list a:hover {
-  color: var(--accent-2);
-}
-
-.music-flap button.flap-toggle {
-  display: none;
-}
-
-.music-area {
-  display: block !important;
-  opacity: 1;
-  transform: none;
-}
-
-
-.container {
-    min-height: 100vh;    
-    display: flex;
-    flex-direction: column;
-}
-
+/* FOOTER */
 .footer {
-    margin-top: auto;
-}
-
-.footer {
+  margin-top: auto;
   text-align: center;
   padding: 1rem 0;
   font-style: italic;
   color: #593c22;
-  opacity: 1.0;
   font-size: 0.9rem;
 }
 
+/* POLAROID */
+.polaroid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fffaf5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+.main-photo {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.caption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #704b2a;
+  font-size: 0.95rem;
+}
 
+/* LINK CARDS */
+.preview { display: none; opacity: 0; transition: opacity 0.6s ease; margin-top: 2rem; text-align: center; }
+.preview.show { display: block; opacity: 1; }
+.preview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 800px;
+  margin: 1rem auto 0;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fffaf5;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 240px;
+}
+.card:hover { transform: scale(1.03); box-shadow: 0 6px 14px rgba(0,0,0,0.15); }
+.card img { width: 100%; height: 180px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.card-text { padding: 0.8rem; font-size: 1rem; color: #4a3a2a; font-weight: 500; }
+
+/* MUSIC AREA ALWAYS SHOWN */
+.music-flap button.flap-toggle { display: none; }
+.music-area { display: block !important; opacity: 1; transform: none; }
+
+/* === TURNTABLE === */
 .turntable {
-  position: absolute;
-  bottom: 30px;
-  right: 50px;
-  width: 240px;
-  height: 240px;
-}
-/* ✨ SPARKLES ✨ */
-.sparkle {
-  position: absolute;
-  font-size: 18px;
-  color: #ffd6ec;
-  opacity: 0;
-  animation: twinkle 3s infinite ease-in-out;
-  pointer-events: none;
-  text-shadow: 0 0 6px #ffd6ec, 0 0 12px #ff9eb5;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-/* positions + staggered delays for movement */
-.sparkle1 { top: -20px; left: 40px; animation-delay: 0.2s; }
-.sparkle2 { top: 10px; right: -20px; animation-delay: 1s; }
-.sparkle3 { bottom: 30px; left: -10px; animation-delay: 1.8s; }
-.sparkle4 { bottom: -20px; right: 30px; animation-delay: 2.5s; }
-
-/* sparkle animation */
-@keyframes twinkle {
-  0%, 100% { opacity: 0; transform: scale(0.8) translateY(0); }
-  50% { opacity: 1; transform: scale(1.2) translateY(-6px); }
-}
-
-/* only visible when record is spinning */
-.turntable.spin .sparkle {
-  opacity: 1;
-}
-
-/* Record */
 .record {
   position: relative;
   width: 180px;
   height: 180px;
   border-radius: 50%;
   background: repeating-radial-gradient(circle, #0a0a0a 0, #0a0a0a 1px, #000 2px);
-  box-shadow: inset 0 0 15px rgba(255,255,255,0.05),
-              inset 0 0 40px rgba(0,0,0,0.5);
-  margin: 0 auto;
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.05), inset 0 0 40px rgba(0,0,0,0.5);
+  margin-right: 50px;
 }
 
-/* Center label */
 .record::before {
   content: "";
   position: absolute;
@@ -271,7 +166,6 @@ body {
   box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
 }
 
-/* Reflection */
 .record::after {
   content: "";
   position: absolute;
@@ -284,7 +178,7 @@ body {
   pointer-events: none;
 }
 
-/* Tonearm */
+/* ARM */
 .hand {
   position: absolute;
   width: 120px;
@@ -292,13 +186,11 @@ body {
   background: #bfa98f;
   border-radius: 3px;
   top: 40px;
-  right: -20px;
+  right: 20px;
   transform-origin: top right;
   transform: rotate(60deg);
   transition: transform 0.8s ease;
 }
-
-/* Stylus head */
 .hand .head {
   position: absolute;
   width: 14px;
@@ -309,29 +201,48 @@ body {
   left: 0;
 }
 
-/* Hand moves inward */
 .turntable.playing .hand {
-  transform: rotate(25deg);
+  animation: handMove 2s ease-in-out infinite alternate;
+}
+@keyframes handMove {
+  from { transform: translateY(0) rotate(60deg); }
+  to { transform: translateY(-6px) rotate(25deg); }
 }
 
-/* Record spins only when hand is down */
+/* SPINNING */
 .turntable.spin .record {
-  animation: spin 5s linear infinite;
+  animation: spinRecord 5s linear infinite;
 }
-
-/* Spin animation */
-@keyframes spin {
+@keyframes spinRecord {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* === STAR ANIMATION === */
+/* ✨ SPARKLES ✨ */
+.sparkle {
+  position: absolute;
+  font-size: 18px;
+  color: #ffd6ec;
+  opacity: 0;
+  animation: twinkle 3s infinite ease-in-out;
+  text-shadow: 0 0 6px #ffd6ec, 0 0 12px #ff9eb5;
+  pointer-events: none;
+}
+.sparkle1 { top: -20px; left: 40px; animation-delay: 0.2s; }
+.sparkle2 { top: 10px; right: -20px; animation-delay: 1s; }
+.sparkle3 { bottom: 30px; left: -10px; animation-delay: 1.8s; }
+.sparkle4 { bottom: -20px; right: 30px; animation-delay: 2.5s; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.turntable.spin .sparkle { opacity: 1; }
+
+/* 🌟 STAR FIELD 🌟 */
 #star-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
@@ -339,44 +250,30 @@ body {
 
 .star {
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width: 3px; height: 3px;
   background: white;
   border-radius: 50%;
   opacity: 0.7;
-  animation: twinkle 2.5s infinite ease-in-out, orbit 18s linear infinite;
+  animation: twinkleStar 3s infinite ease-in-out, orbit 40s linear infinite;
 }
 
-@keyframes twinkle {
+@keyframes twinkleStar {
   0%, 100% { opacity: 0.3; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.3); }
 }
 
 @keyframes orbit {
-  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
 }
 
-/* When music is "playing" */
 body.playing .star {
-  animation-duration: 1.8s, 12s;
+  animation-duration: 1.5s, 18s;
   filter: drop-shadow(0 0 6px white);
 }
 
-.turntable.spin .record {
-  animation: spinRecord 5s linear infinite;
-}
-
-@keyframes spinRecord {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.turntable.playing .hand {
-  animation: handMove 2s ease-in-out infinite alternate;
-}
-
-@keyframes handMove {
-  from { transform: translateY(0) rotate(0deg); }
-  to { transform: translateY(-5px) rotate(3deg); }
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .record { width: 150px; height: 150px; margin-right: 20px; }
+  .hand { width: 100px; right: 10px; top: 30px; }
 }
