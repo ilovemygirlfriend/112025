@@ -22,7 +22,7 @@
 
 <body class="paper-bg">
   <header class="nav">
-    <a class="brand" href="main.html"> ★ </a>
+    <a class="brand" href="index.html"> ★ </a>
     <nav>
       <a href="subs.html">through time</a>
       <a href="photos.html">a museum of you</a>
@@ -45,7 +45,7 @@
 
       <h1 class="title">Happy Birthday, <span class="accent">Remi</span></h1>
       <p class="subtitle">
-        A little scrapbook I made for you — full of memories, photos, and a letter from me.
+        ★
       </p>
 
       <div class="cta-row">
@@ -53,10 +53,9 @@
       </div>
     </section>
 
-    <!-- Hidden section (appears when Open the Scrapbook is clicked) -->
     <section class="preview" id="preview-section">
       <div class="preview-cards">
-        <a class="card" href="story.html">
+        <a class="card" href="subs.html">
           <img src="images/photo2.jpg" alt="memory" onerror="this.src='images/placeholder.jpg'">
           <div class="card-text">through time</div>
         </a>
@@ -64,9 +63,9 @@
           <img src="images/photo3.jpg" alt="letter" onerror="this.src='images/placeholder.jpg'">
           <div class="card-text">to my birthday girl,</div>
         </a>
-        <a class="card" href="gallery.html">
+        <a class="card" href="photos.html">
           <img src="images/photo4.jpg" alt="gallery" onerror="this.src='images/placeholder.jpg'">
-          <div class="card-text">memory lane</div>
+          <div class="card-text">snapshots</div>
         </a>
       </div>
     </section>
@@ -77,7 +76,6 @@
   </footer>
 
   <script>
-    // Toggle the preview section when “Open the Scrapbook” is clicked
     document.getElementById("open-scrapbook").addEventListener("click", function(e) {
       e.preventDefault();
       const preview = document.getElementById("preview-section");
