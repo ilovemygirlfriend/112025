@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-</script>
-
 <body class="paper-bg">
   <header class="nav small">
     <a class="brand" href="index.html">← Back</a>
@@ -16,44 +14,37 @@
 
   <main class="container narrow">
     <h1 class="section-title">our playlists</h1>
-
-
     <hr>
 
     <div class="music-flap always-show">
-      <div class="spotify-embed">
-        <iframe src="https://open.spotify.com/embed/playlist/4fsR4P684IEfUI59tpcbAp"
-          width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+      <!-- We’ll detect clicks on this wrapper -->
+      <div class="spotify-wrapper">
+        <div class="spotify-embed">
+          <iframe src="https://open.spotify.com/embed/playlist/4fsR4P684IEfUI59tpcbAp"
+            width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
 
-        <iframe src="https://open.spotify.com/embed/playlist/3NsCbFz4iNWMoAtiJY8AR6"
-          width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+          <iframe src="https://open.spotify.com/embed/playlist/3NsCbFz4iNWMoAtiJY8AR6"
+            width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+        </div>
       </div>
     </div>
-
-
-
   </main>
 
-<div class="turntable">
-  <div class="record"></div>
-  <div class="hand">
-    <div class="head"></div>
+  <div class="turntable">
+    <div class="record"></div>
+    <div class="hand"><div class="head"></div></div>
+
+    <div class="sparkle sparkle1">★</div>
+    <div class="sparkle sparkle2">✦</div>
+    <div class="sparkle sparkle3">⋆</div>
+    <div class="sparkle sparkle4">˚</div>
   </div>
-
-  <div class="sparkle sparkle1">★</div>
-  <div class="sparkle sparkle2">✦</div>
-  <div class="sparkle sparkle3">⋆</div>
-  <div class="sparkle sparkle4">˚</div>
-</div>
-
 
   <footer class="footer">
     <p>I think of you in every song I listen to</p>
   </footer>
 
-<div id="star-container"></div>
-<script src="js/script.js"></script>
+  <div id="star-container"></div>
+  <script src="js/script.js"></script>
 </body>
-
 </html>
-
