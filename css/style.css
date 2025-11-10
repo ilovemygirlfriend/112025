@@ -272,14 +272,22 @@ body.playing .star {
   to { transform: rotate(360deg); }
 }
 
-@media (max-width: 600px) {
+/* Default size for desktop/tablet */
+.nav-stickers img {
+  width: 40px; /* you can change this to 40px or 60px */
+  height: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 500px) {
   .nav-stickers {
     top: 10px;
     right: 10px;
-    gap: 8px;
+    gap: 10px; /* space between stickers */
   }
+
   .nav-stickers img {
-    width: 32px;
+    width: 28px; /* smaller size for mobile */
   }
 }
-
