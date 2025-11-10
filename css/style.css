@@ -44,6 +44,17 @@ body {
   font-family: 'ROMANTIC', cursive;
   letter-spacing: 4px;
 }
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers vertically */
+  align-items: center; /* centers horizontally */
+  text-align: center; /* centers the text itself */
+  min-height: 100vh; /* fills the screen height */
+  padding: 0 20px; /* keeps it comfy on mobile */
+}
+
 .nav-stickers {
   position: absolute;
   top: 15px;
@@ -274,13 +285,13 @@ body.playing .star {
 
 /* Default size for desktop/tablet */
 .nav-stickers img {
-  width: 40px; /* you can change this to 40px or 60px */
+  width: 50px; /* you can change this to 40px or 60px */
   height: auto;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* Mobile adjustments */
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .nav-stickers {
     top: 10px;
     right: 10px;
@@ -288,6 +299,6 @@ body.playing .star {
   }
 
   .nav-stickers img {
-    width: 28px; /* smaller size for mobile */
+    width: 35px; /* smaller size for mobile */
   }
 }
