@@ -159,10 +159,10 @@ h1, h2 {
 /* PLINTH BASE */
 .plinth {
   position: absolute;
-  bottom: 30px;
-  right: 30;
-  width: 220px;
-  height: 220px;
+  bottom: -40px;
+  right: 30px;
+  width: 370px;
+  height: 370px;
   background: linear-gradient(180deg, #3B0D0D, #1F0404);
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
