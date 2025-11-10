@@ -31,15 +31,29 @@ a:hover {
   --shadow: rgba(45, 33, 25, 0.12);
 }
 
-/* 🌠 HOME PAGE (rotating stars background) */
 body.home-page {
+  background-image: url('../images/TychoSkymapII.t3_04096x02048.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
-  overflow: hidden;
   color: var(--text);
   font-family: 'Lora', serif;
+  overflow: hidden;
 }
 
+/* Optional: soft overlay for readability */
 body.home-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* ✅ Optional smooth slow rotation (only the image layer, not the content) */
+body.home-page::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -47,23 +61,16 @@ body.home-page::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  animation: rotateStars 90s linear infinite;
   z-index: -2;
   opacity: 0.9;
+  animation: bgRotate 200s linear infinite;
 }
 
-body.home-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: -1;
+@keyframes bgRotate {
+  from { transform: rotate(0deg) scale(1.05); }
+  to { transform: rotate(360deg) scale(1.05); }
 }
 
-@keyframes rotateStars {
-  from { transform: rotate(0deg) scale(1); }
-  to { transform: rotate(180deg) scale(1.05); }
-}
 
 /* 🌈 OTHER PAGE THEMES */
 body.subs-page {
