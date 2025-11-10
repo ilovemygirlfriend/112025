@@ -44,6 +44,28 @@ body {
   font-family: 'ROMANTIC', cursive;
   letter-spacing: 4px;
 }
+.nav-stickers {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-stickers img {
+  width: 40px; /* adjust size if too big or small */
+  height: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-stickers img:hover {
+  transform: scale(1.1) rotate(-3deg);
+  opacity: 0.9;
+}
 
 /* CONTAINERS */
 .container {
